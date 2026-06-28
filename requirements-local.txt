@@ -1,0 +1,8 @@
+# Local (Mac) — data collection, cleaning, analysis ONLY. No training here.
+requests
+beautifulsoup4
+lxml
+pandas
+tqdm
+datasets
+scikit-learn
