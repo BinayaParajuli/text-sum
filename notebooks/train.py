@@ -22,7 +22,7 @@
 # IMPORTANT: Colab's default `transformers` is now 5.x, which breaks peft + Seq2SeqTrainer
 # here (ImportError inside get_peft_model). Pin a tested 4.x stack instead.
 # >>> After this cell finishes, RESTART THE KERNEL (Runtime > Restart), then Run All again. <<<
-!pip -q install -U "transformers==4.46.*" "datasets==2.21.*" "peft==0.14.*" "accelerate>=1.1" evaluate rouge_score bert_score sacremoses sentencepiece
+# !pip -q install -U "transformers==4.46.*" "datasets==2.21.*" "peft==0.14.*" "accelerate>=1.1" evaluate rouge_score bert_score sacremoses sentencepiece
 
 # %% [markdown]
 # ## 1. Configuration
