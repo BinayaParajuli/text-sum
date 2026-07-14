@@ -38,6 +38,13 @@ pip install -r requirements-local.txt
 
 ## Workflow
 
-1. `python src/scrape.py`     -> data/raw/*.jsonl
-2. `python src/prepare.py`    -> data/processed/{train,val,test}.jsonl
-3. Upload processed data to Google Drive, open notebooks/ in Colab, train.
+1. `python src/prepare.py`    -> `data/processed/{train,validation,test}.jsonl` (5808 / 725 / 725)
+2. Upload `data/processed/` to Google Drive (or push the repo), then open the notebooks in Colab.
+3. `notebooks/train_lora.ipynb` — the single, config-driven trainer. Set `MODEL_KEY='mt5'`,
+   Run all; then set `MODEL_KEY='mbart'`, Run all. Each run writes
+   `results/<key>_metrics.json`, `results/<key>_samples.jsonl`, and the LoRA adapter.
+4. `notebooks/compare_results.ipynb` — builds the comparison table (CSV + LaTeX) and bar chart
+   (`results/comparison.{csv,png}`) from both metrics files.
+
+Both models (`google/mt5-base`, `facebook/mbart-large-50`) are LoRA fine-tuned through the same
+pipeline and scored with **ROUGE** and **BERTScore**, matching the proposal in `docs/main.tex`.
