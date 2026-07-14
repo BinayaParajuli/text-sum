@@ -6,3 +6,12 @@ pandas
 tqdm
 datasets
 scikit-learn
+transformers==4.46.* 
+datasets==2.21.*  
+peft==0.14.* 
+accelerate>=1.1 
+evaluate 
+rouge_score 
+bert_score 
+sacremoses 
+sentencepiece
